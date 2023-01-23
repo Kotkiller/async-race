@@ -1,9 +1,9 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const CopyPlugin=require('copy-webpack-plugin');
+// const CopyPlugin=require('copy-webpack-plugin');
 
   module.exports = {
     entry: './public/index.js',
@@ -14,7 +14,7 @@ const CopyPlugin=require('copy-webpack-plugin');
       directory: path.join(__dirname, 'public'),
     },
     compress: true,
-    port: 3000,
+    port: 8080,
   },
     module: {
       rules: [
@@ -83,12 +83,12 @@ const CopyPlugin=require('copy-webpack-plugin');
             },
           },
         }),
-        new CleanWebpackPlugin(),
-        new CopyPlugin({
-          patterns:[
-            {from: path.resolve(__dirname, 'public/assets'), to: path.resolve(__dirname, 'dist')}
-          ]
-        }),
+        // new CleanWebpackPlugin(),
+        // new CopyPlugin({
+        //   patterns:[
+        //     {from: path.resolve(__dirname, 'public/assets'), to: path.resolve(__dirname, 'dist')}
+        //   ]
+        // }),
         new HtmlWebpackPlugin({
           template: 'public/index.html',
           filename: 'index.html',
