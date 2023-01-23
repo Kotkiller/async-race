@@ -1,17 +1,47 @@
 {
+  "devDependencies": {
+    "airbnb": "^0.0.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "gh-pages": "^4.0.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "image-minimizer-webpack-plugin": "^3.8.1",
+    "imagemin": "^8.0.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^10.0.1",
+    "import": "^0.0.6",
+    "json-server": "^0.16.3",
+    "mini-css-extract-plugin": "^2.7.2",
+    "postcss-loader": "^7.0.2",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4",
+    "typescript-eslint": "^0.0.1-alpha.0",
+    "unicorn": "^0.0.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
   "name": "async-race-api",
   "version": "1.0.0",
   "description": "Fun with promises",
   "main": "index.js",
+  "homepage": "https://github.com/Kotkiller/online-store/",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development"
   },
   "author": "mikhama",
   "license": "MIT",
-  "devDependencies": {
-    "dev-server": "^0.2.0",
-    "json-server": "^0.16.3",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1"
+  "dependencies": {
+    "clean-webpack-plugin": "^4.0.0"
   }
 }

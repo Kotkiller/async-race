@@ -6,15 +6,15 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const CopyPlugin=require('copy-webpack-plugin');
 
   module.exports = {
-    entry: './src/index.ts',
+    entry: './public/index.js',
     mode: 'development',
    devtool: 'inline-source-map',
    devServer: {
     static: {
-      directory: path.join(__dirname, 'src'),
+      directory: path.join(__dirname, 'public'),
     },
     compress: true,
-    port: 9000,
+    port: 3000,
   },
     module: {
       rules: [
@@ -86,11 +86,11 @@ const CopyPlugin=require('copy-webpack-plugin');
         new CleanWebpackPlugin(),
         new CopyPlugin({
           patterns:[
-            {from: path.resolve(__dirname, 'src/assets'), to: path.resolve(__dirname, 'dist')}
+            {from: path.resolve(__dirname, 'public/assets'), to: path.resolve(__dirname, 'dist')}
           ]
         }),
         new HtmlWebpackPlugin({
-          template: 'src/index.html',
+          template: 'public/index.html',
           filename: 'index.html',
           minify: {
             collapseWhitespace: true,
